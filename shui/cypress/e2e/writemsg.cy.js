@@ -9,6 +9,6 @@ describe('write Message', () => {
   it('passes', () => {
     cy.visit('http://localhost:5174/writemsg')
     cy.get('[data-id="writeMsgPost"]').click()
-    cy.get('flow')
+    cy.get("[data-id='flow']")
   })
 })
