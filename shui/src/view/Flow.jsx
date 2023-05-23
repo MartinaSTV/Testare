@@ -9,7 +9,7 @@ function Flow() {
  
 
     function handleClick() {
-        navigate('/writemsg')
+        navigate('/writemsg ',{state: {moreMessge: data}})
     }
     return (
         <article data-id='flow'>
