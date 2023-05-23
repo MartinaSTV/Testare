@@ -1,7 +1,12 @@
 import { useNavigate } from "react-router-dom"
+import { useLocation } from "react-router-dom"
 
 function Flow() {
     const navigate = useNavigate()
+    const location = useLocation()
+    const data = location.state
+    console.log(data)
+ 
 
     function handleClick() {
         navigate('/writemsg')
