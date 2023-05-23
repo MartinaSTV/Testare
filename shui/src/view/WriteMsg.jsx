@@ -5,16 +5,26 @@ function WriteMsg() {
     const navigate = useNavigate()
     const [msg, setMsg] = useState()
     const [user, setUser] = useState()
-    let timeDate;
-    let wholeMsg = {
+    const date = '11 mars'
+    const [allMsgs, setAllMsgs] = useState([{
+        user: 'stefan',
+        msg: 'hejsan',
+        timeDate: '11 october'
+    }])
+
+
+    let newMsg = {
         user: user,
         msg: msg,
-        timeDate: timeDate
+        timeDate: date
     }
 
     function handleClick() {
-        
-        navigate('/', {state: {wholeMsg: wholeMsg}})
+        let tempArr = [...allMsgs, newMsg]
+        setAllMsgs(tempArr)
+        console.log(tempArr);
+        console.log(newMsg);
+        navigate('/', {state: {allMsgs: allMsgs}})
     }
 
     return (
