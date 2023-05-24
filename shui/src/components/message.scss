@@ -1,5 +1,9 @@
 .message{
     background-color: white;
+    padding: 1rem;
+    margin-left: 1rem;
+    margin-right: 1rem;
+    margin-top: 2rem;
 
     &__user{
         font-family: 'PT Sans';
@@ -12,6 +16,26 @@
         background-color: #EF4343;
         border: none;
         border-radius: 5px;
+        padding: 0.3rem;
+    }
+    &__date{
+        font-family: 'PT Sans';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 150%;
+        letter-spacing: 0.04em;
+        color: rgba(0, 0, 0, 0.6);
+    }
+    &__text{
+        font-family: 'PT Sans';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 150%;
+    }
+    &__trekant{
+       margin-left: 19rem;
     }
 
 }
