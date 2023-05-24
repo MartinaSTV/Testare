@@ -1,6 +1,8 @@
 import { useNavigate } from "react-router-dom"
 import './flow.scss'
 import ikon from '../assets/Subtractikon.svg'
+import bottom from '../assets/shuibottom2.svg'
+import writebtn from '../assets/write.svg'
 import Message from "../components/message"
 import pen from '../assets/Vector4.svg'
 
@@ -14,14 +16,15 @@ function Flow() {
 
     const localMessages = JSON.parse(localStorage.getItem('allMessages'))
   
-    
-    if (localMessages === null){
+    console.log(localMessages);
+    if (localMessages === null  || localMessages.length === 0){
         
         return (
             <article data-id='flow' className="flow">
                 <section className="flow__rectangle"><img src={ikon} alt="ikon" /></section>
-                <section><p>ingamedelanden</p></section>
-                <button data-id='flowBtn' onClick={ handleClick } className="flow__button"><img src={pen} alt="" /></button>
+                <section><p className="flow__nomessages">Du har inga meddelanden att visa.</p></section>
+                <img data-id='flowBtn' onClick={ handleClick } className="flow__button" src={ writebtn } alt="writebutton" />
+                <img src={ bottom } alt="" className="flow__bottom"/>
             </article>
         )
         
@@ -34,7 +37,8 @@ function Flow() {
             <article data-id='flow' className="flow">
                 <section className="flow__rectangle"><img src={ikon} alt="ikon" /></section>
                 <section>{ allPost}</section>
-                <button data-id='flowBtn' onClick={ handleClick } className="flow__button"><img src={pen} alt="" /></button>
+                <img data-id='flowBtn' onClick={ handleClick } className="flow__button" src={ writebtn } alt="writebutton" />
+                
             </article>
         )
     

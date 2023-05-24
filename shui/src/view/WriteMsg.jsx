@@ -2,6 +2,7 @@ import { useNavigate } from "react-router-dom"
 import { useState, useEffect } from "react"
 import './writemsg.scss'
 import uuid from 'uuid-random'
+import logo from '../assets/Subtractikon.svg';
 function WriteMsg() {
 
     const id = uuid()
@@ -55,8 +56,9 @@ function WriteMsg() {
 
     return (
         <article data-id='writeMsg' className="write">
-            <textarea className="write__text" onChange={ (e) => setMsg(e.target.value) } data-id='writeMsgText'/>
-            <input className="write__user" onChange={ (e) => setUser(e.target.value) } type="text" data-id='writeMsgUser'/>
+            <img src={ logo } alt="logo" className="write__logo"/>
+            <textarea placeholder="Skriv något kul!" className="write__text" onChange={ (e) => setMsg(e.target.value) } data-id='writeMsgText'/>
+            <input placeholder="Användarnamn" className="write__user" onChange={ (e) => setUser(e.target.value) } type="text" data-id='writeMsgUser'/>
             <button className="write__btn" data-id='writeMsgPost' onClick={ handleClick }>Publicera</button>
         </article>
     )
