@@ -18,24 +18,19 @@ function WriteMsg() {
         timeDate: date
     }
 
-    
-        function getFromLocal() {
-            const localMsgs = JSON.parse(localStorage.getItem('allMessages'))
-            console.log(localMsgs);
-            if (localMsgs === null) {
-                console.log('i getfromlocal if');
-
-            }
-            else {
-                allMsgs = localMsgs
-                console.log(allMsgs);
-                console.log('i getfromlocal else');
-            }
-            
+    function getFromLocal() {
+        const localMsgs = JSON.parse(localStorage.getItem('allMessages'))
+        console.log(localMsgs);
+        if (localMsgs === null) {
+            console.log('i getfromlocal if');
         }
-
+        else {
+            allMsgs = localMsgs
+            console.log(allMsgs);
+            console.log('i getfromlocal else');
+        }
         
-   
+    }
 
     function handleClick() {
         getFromLocal();
