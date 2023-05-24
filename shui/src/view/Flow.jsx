@@ -15,8 +15,8 @@ function Flow() {
 
     const localMessages = JSON.parse(localStorage.getItem('allMessages'))
   
-    
-    if (localMessages === null){
+    console.log(localMessages);
+    if (localMessages === null  || localMessages.length === 0){
         
         return (
             <article data-id='flow' className="flow">
