@@ -1,10 +1,16 @@
 import { useNavigate } from "react-router-dom"
+import { useLocation } from "react-router-dom"
+import './flow.scss'
 
 function Flow() {
     const navigate = useNavigate()
+    const location = useLocation()
+    const data = location.state
+    console.log(data)
+ 
 
     function handleClick() {
-        navigate('/writemsg')
+        navigate('/writemsg ',{state: {moreMessge: data}})
     }
     return (
         <article data-id='flow'>
