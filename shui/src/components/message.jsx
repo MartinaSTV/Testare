@@ -5,7 +5,12 @@ function Message(props) {
     function remove(){
         const localMsgs = JSON.parse(localStorage.getItem('allMessages'))
         console.log(localMsgs)
-      
+        let removefromStorage = localMsgs.findIndex((post)=> post.id === localMsgs.id)
+           const newRemovePostfromStorage = [...PostfromStorage] 
+           newremovedPostfromStorage.splice(removefromStorage, 1)
+        
+        
+       localStorage.setItem('allMessages', JSON.stringify(newremovedPostfromStorage))
     
 
     }
