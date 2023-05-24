@@ -6,6 +6,7 @@ function Message(props) {
         const localMsgs = JSON.parse(localStorage.getItem('allMessages'))
        
         let removefromStorage = localMsgs.findIndex((post)=> post.id === props.post.id)
+        console.log(removefromStorage)
         const NewPostfromStorage = [...localMsgs] 
         NewPostfromStorage.splice(removefromStorage, 1)
             

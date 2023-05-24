@@ -4,7 +4,7 @@ import ikon from '../assets/Subtractikon.svg'
 import bottom from '../assets/shuibottom2.svg'
 import writebtn from '../assets/write.svg'
 import Message from "../components/message"
-import pen from '../assets/Vector4.svg'
+
 
 function Flow() {
 
