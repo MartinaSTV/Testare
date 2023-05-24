@@ -28,9 +28,15 @@ function WriteMsg() {
     }, [])
 
     function handleClick() {
-        let tempArr = [...allMsgs, newMsg]
-        setAllMsgs(tempArr)
-        localStorage.setItem('allMessages', JSON.stringify(tempArr))
+        if (!allMsgs) {
+            let tempArr = newMsg
+            localStorage.setItem('allMessages', JSON.stringify(tempArr))
+        }
+        else {
+            let tempArr = [...allMsgs, newMsg]
+            localStorage.setItem('allMessages', JSON.stringify(tempArr))
+        }
+        
         navigate('/')
     }
 
