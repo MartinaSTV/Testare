@@ -13,17 +13,33 @@ function Flow() {
 
     const localMessages = JSON.parse(localStorage.getItem('allMessages'))
   
-    let allPost = localMessages.map((item, index)=>{
-        return < Message post = {item} key = {index}/>
-    })
+    
+    if (localMessages === null){
+        
+        return (
+            <article data-id='flow' className="flow">
+                <section className="flow__rectangle"><img src={ikon} alt="ikon" /></section>
+                <section><p>ingamedelanden</p></section>
+                <button data-id='flowBtn' onClick={ handleClick } className="flow__button">skriv</button>
+            </article>
+        )
+        
+    }else{
+        let allPost = localMessages.map((item, index)=>{
+            return < Message post = {item} key = {index}/>
+        })
 
-    return (
-        <article data-id='flow' className="flow">
-            <section className="flow__rectangle"><img src={ikon} alt="ikon" /></section>
-            <section>{ allPost }</section>
-            <button data-id='flowBtn' onClick={ handleClick } className="flow__button">skriv</button>
-        </article>
-    )
+        return (
+            <article data-id='flow' className="flow">
+                <section className="flow__rectangle"><img src={ikon} alt="ikon" /></section>
+                <section>{ allPost}</section>
+                <button data-id='flowBtn' onClick={ handleClick } className="flow__button">skriv</button>
+            </article>
+        )
+    
+    }
+    
+   
 }
 
 export default Flow
