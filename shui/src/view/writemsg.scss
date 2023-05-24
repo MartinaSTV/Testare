@@ -1,0 +1,35 @@
+.write {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: #19274A;
+    height: 100vh;
+
+    &__text {
+        margin: 1rem;
+        padding: .5rem;
+        background-color: white;
+        width: 492px;
+        border: none;
+        height: 50%;
+        font-size: 24px;
+    }
+    &__user {
+        border: 1px solid white;
+        color: white;
+        background-color: transparent;
+        margin: 1rem;
+        padding: .5rem;
+        width: 492px;
+        height: 5%;
+        font-size: 24px;
+    }
+    &__btn {
+        background-color: #EF4343;
+        border: none;
+        width: 507px;
+        height: 72px;
+        font-size: 24px;
+    }
+}
