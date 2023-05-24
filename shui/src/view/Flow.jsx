@@ -1,12 +1,11 @@
 import { useNavigate } from "react-router-dom"
 import './flow.scss'
 import ikon from '../assets/Subtractikon.svg'
-import { useState } from "react"
+import { useState, useEffect } from "react"
 
 function Flow() {
 
     const [allMessages, setAllMessages] = useState()
-    console.log(allMsgs)
     const navigate = useNavigate()
 
     function handleClick() {
