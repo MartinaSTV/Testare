@@ -2,6 +2,7 @@ import { useNavigate } from "react-router-dom"
 import './flow.scss'
 import ikon from '../assets/Subtractikon.svg'
 import Message from "../components/message"
+import pen from '../assets/Vector4.svg'
 
 function Flow() {
 
@@ -20,7 +21,7 @@ function Flow() {
             <article data-id='flow' className="flow">
                 <section className="flow__rectangle"><img src={ikon} alt="ikon" /></section>
                 <section><p>ingamedelanden</p></section>
-                <button data-id='flowBtn' onClick={ handleClick } className="flow__button">skriv</button>
+                <button data-id='flowBtn' onClick={ handleClick } className="flow__button"><img src={pen} alt="" /></button>
             </article>
         )
         
@@ -33,7 +34,7 @@ function Flow() {
             <article data-id='flow' className="flow">
                 <section className="flow__rectangle"><img src={ikon} alt="ikon" /></section>
                 <section>{ allPost}</section>
-                <button data-id='flowBtn' onClick={ handleClick } className="flow__button">skriv</button>
+                <button data-id='flowBtn' onClick={ handleClick } className="flow__button"><img src={pen} alt="" /></button>
             </article>
         )
     
