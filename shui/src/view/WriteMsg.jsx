@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom"
-import { useState } from "react"
+import { useState, useEffect } from "react"
 
 function WriteMsg() {
     const navigate = useNavigate()
@@ -11,20 +11,26 @@ function WriteMsg() {
         msg: 'hejsan',
         timeDate: '11 october'
     }])
-
-
     let newMsg = {
         user: user,
         msg: msg,
         timeDate: date
     }
 
+    useEffect(() => {
+        function getFromLocal() {
+            const localMsgs = JSON.parse(localStorage.getItem('allMessages'))
+            setAllMsgs(localMsgs)
+        }
+
+        getFromLocal();
+    }, [])
+
     function handleClick() {
         let tempArr = [...allMsgs, newMsg]
         setAllMsgs(tempArr)
-        console.log(tempArr);
-        console.log(newMsg);
-        navigate('/', {state: {allMsgs: allMsgs}})
+        localStorage.setItem('allMessages', JSON.stringify(tempArr))
+        navigate('/')
     }
 
     return (
