@@ -13,9 +13,15 @@ function Flow() {
 
     const localMessages = JSON.parse(localStorage.getItem('allMessages'))
   
-    let allPost = localMessages.map((item, index)=>{
-        return < Message post = {item} key = {index}/>
-    })
+    
+    if (localMessages === null){
+        console.log('inga mdeena')
+    }{
+        let allPost = localMessages.map((item, index)=>{
+            return < Message post = {item} key = {index}/>
+        })
+    }
+    
 
     return (
         <article data-id='flow' className="flow">
