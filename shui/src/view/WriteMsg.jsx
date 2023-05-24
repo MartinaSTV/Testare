@@ -18,22 +18,21 @@ function WriteMsg() {
         timeDate: date
     }
 
-    useEffect(() => {
         function getFromLocal() {
             const localMsgs = JSON.parse(localStorage.getItem('allMessages'))
             setAllMsgs(localMsgs)
         }
 
-        getFromLocal();
-    }, [])
-
     function handleClick() {
-        if (!allMsgs) {
+        getFromLocal()
+        if (allMsgs === null) {
             let tempArr = newMsg
             localStorage.setItem('allMessages', JSON.stringify(tempArr))
         }
         else {
             let tempArr = [...allMsgs, newMsg]
+            console.log(allMsgs)
+            setAllMsgs(tempArr)
             localStorage.setItem('allMessages', JSON.stringify(tempArr))
         }
         
