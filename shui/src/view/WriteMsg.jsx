@@ -11,7 +11,7 @@ function WriteMsg() {
     const navigate = useNavigate()
     const [msg, setMsg] = useState()
     const [user, setUser] = useState()
-    const date = '11 mars'
+    const date = 'Monday 11 mars. 13.30'
     let allMsgs = [{
         id: id,
         user: 'stefan',

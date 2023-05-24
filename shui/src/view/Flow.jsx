@@ -6,6 +6,7 @@ import writebtn from '../assets/write.svg'
 import Message from "../components/message"
 
 
+
 function Flow() {
 
     const navigate = useNavigate()
@@ -36,7 +37,7 @@ function Flow() {
         return (
             <article data-id='flow' className="flow">
                 <section className="flow__rectangle"><img src={ikon} alt="ikon" /></section>
-                <section>{ allPost}</section>
+                <section className="flow__posts">{ allPost}</section>
                 <img data-id='flowBtn' onClick={ handleClick } className="flow__button" src={ writebtn } alt="writebutton" />
                 
             </article>
