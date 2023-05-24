@@ -7,34 +7,47 @@ function WriteMsg() {
     const [msg, setMsg] = useState()
     const [user, setUser] = useState()
     const date = '11 mars'
-    const [allMsgs, setAllMsgs] = useState([{
+    let allMsgs = [{
         user: 'stefan',
         msg: 'hejsan',
         timeDate: '11 october'
-    }])
+    }]
     let newMsg = {
         user: user,
         msg: msg,
         timeDate: date
     }
 
-    useEffect(() => {
+    
         function getFromLocal() {
             const localMsgs = JSON.parse(localStorage.getItem('allMessages'))
-            setAllMsgs(localMsgs)
+            console.log(localMsgs);
+            if (localMsgs === null) {
+                console.log('i getfromlocal if');
+
+            }
+            else {
+                allMsgs = localMsgs
+                console.log(allMsgs);
+                console.log('i getfromlocal else');
+            }
+            
         }
 
-        getFromLocal();
-    }, [])
+        
+   
 
     function handleClick() {
+        getFromLocal();
         if (!allMsgs) {
             let tempArr = newMsg
+            console.log('i klick if');
             localStorage.setItem('allMessages', JSON.stringify(tempArr))
         }
         else {
-            let tempArr = [...allMsgs, newMsg]
-            localStorage.setItem('allMessages', JSON.stringify(tempArr))
+            allMsgs.push(newMsg)
+            console.log('i klick else');
+            localStorage.setItem('allMessages', JSON.stringify(allMsgs))
         }
         
         navigate('/')
