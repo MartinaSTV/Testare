@@ -1,5 +1,6 @@
 import { useNavigate } from "react-router-dom"
 import { useState } from "react"
+import './writemsg.scss'
 
 function WriteMsg() {
     const navigate = useNavigate()
