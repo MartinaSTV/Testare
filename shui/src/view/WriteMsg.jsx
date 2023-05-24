@@ -19,6 +19,7 @@ function WriteMsg() {
         timeDate: '11 october'
     }]
     let newMsg = {
+        id: id,
         user: user,
         msg: msg,
         timeDate: date
