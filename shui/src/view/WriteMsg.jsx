@@ -1,13 +1,18 @@
 import { useNavigate } from "react-router-dom"
 import { useState, useEffect } from "react"
 import './writemsg.scss'
-
+import uuid from 'uuid-random'
 function WriteMsg() {
+
+    const id = uuid()
+    console.log(id)
+
     const navigate = useNavigate()
     const [msg, setMsg] = useState()
     const [user, setUser] = useState()
     const date = '11 mars'
     let allMsgs = [{
+        id: id,
         user: 'stefan',
         msg: 'hejsan',
         timeDate: '11 october'

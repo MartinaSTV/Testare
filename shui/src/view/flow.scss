@@ -1,6 +1,10 @@
 .flow{
+    background-color: rgba(25, 39, 74, 1);
+    padding: 1rem;
 
     &__rectangle{
         background-color: rgba(239, 67, 67, 1);
+        max-width: 2rem;
+        height: 4rem;
     }
 }
