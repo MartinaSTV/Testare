@@ -2,11 +2,16 @@ import './message.scss'
 
 function Message(props) {
 
+    function remove(){
+
+    }
+
     return (
-        <aside data-id='msg'>
-            <p data-id='msgDateTime'>Datum och tid</p>
-            <p data-id='msgText'>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Corrupti vitae quasi porro, cumque repellendus amet reiciendis asperiores quidem, magni, dolore qui a itaque sit reprehenderit voluptatibus culpa eaque. Dolorem, quaerat!</p>
-            <p data-id='msgUser'>{props.post.user}</p>
+        <aside data-id='msg' className='message'>
+            <p data-id='msgDateTime'>{props.post.timeDate}</p>
+            <p data-id='msgText'>{props.post.msg}</p>
+            <p data-id='msgUser' className='message__user'>{props.post.user}</p>
+            <button data-id='msgRemove' className='message__button' onCanPlay={ remove }>Ta bort</button>
         </aside>
     )
 }
