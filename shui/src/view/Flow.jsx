@@ -1,21 +1,17 @@
 import { useNavigate } from "react-router-dom"
-import { useLocation } from "react-router-dom"
 import './flow.scss'
+import ikon from '../assets/Subtractikon.svg'
 
 function Flow() {
     const navigate = useNavigate()
-    const location = useLocation()
-    const data = location.state
-    console.log(data)
- 
 
     function handleClick() {
-        navigate('/writemsg ',{state: {moreMessge: data}})
+        navigate('/writemsg')
     }
     return (
-        <article data-id='flow'>
-            <h1>Här ska meddelanden komma</h1>
-            <button data-id='flowBtn' onClick={ handleClick }>skriv</button>
+        <article data-id='flow' className="flow">
+            <section className="flow__rectangle"><img src={ikon} alt="ikon" /></section>
+            <button data-id='flowBtn' onClick={ handleClick } className="flow__button">skriv</button>
         </article>
     )
 }
