@@ -39,7 +39,7 @@ function Flow() {
                 <section className="flow__rectangle"><img src={ikon} alt="ikon" /></section>
                 <section className="flow__posts">{ allPost}</section>
                 <img data-id='flowBtn' onClick={ handleClick } className="flow__button" src={ writebtn } alt="writebutton" />
-                
+                <div className="flow__shadow"></div>
             </article>
         )
     
