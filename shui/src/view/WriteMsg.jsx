@@ -13,7 +13,7 @@ function WriteMsg() {
     const [user, setUser] = useState()
     const date = 'Monday 11 mars. 13.30'
     let allMsgs = [{
-        id: id,
+        id: 'hola',
         user: 'stefan',
         msg: 'hejsan',
         timeDate: '11 october'
